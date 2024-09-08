@@ -15,3 +15,12 @@
 - JavaScript in Node.js
 
   - Node.js is a runtime environment that allows you to run JavaScript on the server. It is built on the V8 JavaScript engine and provides a set of APIs for building server-side applications.
+
+## ORDER
+
+- variables and data types
+- operators
+- control flow
+- functions
+- arrays
+- objects
