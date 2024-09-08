@@ -12,7 +12,7 @@
 
       1. Front-end development: This involves creating the user interface and user experience of a website. Front-end developers use HTML, CSS, and JavaScript to build websites that are visually appealing and interactive.
 
-      2. Back-end development: This involves building the server-side of a website. Back-end developers use programming languages such as Python, Ruby, and PHP to create the logic and functionality of a website.
+      2. Back-end development: This involves building the server-side of a website. Back-end developers use programming languages such as Python, Node.js, and PHP to create the logic and functionality of a website.
 
       3. Full-stack development: This involves working on both the front-end and back-end of a website. Full-stack developers are proficient in both front-end and back-end technologies and can build a website from start to finish.
 
@@ -21,7 +21,7 @@
       Some of the key skills required for web development include:
 
       1. Proficiency in HTML, CSS, and JavaScript
-      2. Knowledge of programming languages such as Python, Ruby, and PHP
+      2. Knowledge of programming languages such as Python, Node.js, and PHP
       3. Understanding of web design principles
       4. Familiarity with web development frameworks and libraries
       5. Problem-solving skills
