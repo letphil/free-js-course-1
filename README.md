@@ -4,7 +4,7 @@
 
 ### What is web development?
 
-    Web development is the process of building and maintaining websites. It involves a variety of tasks such as web design, web content development, client-side/server-side scripting, and network security configuration.
+     Web development is the process of building and maintaining websites. It involves a variety of tasks such as web design, web content development, client-side/server-side scripting, and network security configuration.
 
 ### What are the different types of web development?
 
