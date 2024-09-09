@@ -59,30 +59,30 @@ let's add the script tag to the bottom of the body
 first we will need to use local storage to load up the tasks that we had before
 if none before we will need to create an empty array
 
-1. get items from local storage key of 'tasks'
+1. get items from local storage key of 'tasks' [ x ]
 
-2. now in event DOMContentLoaded we will need to render the tasks on the board
+2. now in event 'DOMContentLoaded' we will need to render the tasks on the board [ x ]
 
-3. let us make the renderTasks function
+3. let us make the renderTasks function [ x ]
   - first we will need to clear the tasks from the board
   - then we will loop through the tasks and add them to the board
 
-4. createTaskElement function to create the task element
+4. createTaskElement function to create the task element [ x ]
 
 5. make function to delete task
 
 
-6. function allow drop
+6. function allow drop[ x]
 function allowDrop(event) {
   event.preventDefault()
 }
 
-7. drag function
+7. drag function [ x]
 function drag(event) {
   event.dataTransfer.setData('text/plain', event.target.id)
 }
 
-8. drop function
+8. drop function [ x]
 
 9. capitalize input
 function capitalizeInput(input) {
