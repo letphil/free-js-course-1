@@ -1,0 +1,21 @@
+{
+  "name": "express-server",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "``` this will be a simple web server -> will be able to server static files -> will be able to handle http requests ```",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "path": "^0.12.7"
+  }
+}
