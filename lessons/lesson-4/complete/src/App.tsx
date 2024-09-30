@@ -1,9 +1,19 @@
-import { createUser, loginUser } from "./firebase";
+import { useEffect } from "react";
+
+import { createUser, loginUser, authObserver } from "./firebase";
 
 export default function App() {
+  useEffect(() => {
+    authObserver();
+
+    return () => {
+      // cleanup
+    };
+  });
+
   const signUserUp = async () => {
     try {
-      const signupAttempt = await createUser("test@test.test", "password");
+      const signupAttempt = await createUser("test1@test.test", "password");
       console.log("signupAttempt =", signupAttempt);
     } catch (error) {
       console.error("error =", error);
@@ -12,7 +22,7 @@ export default function App() {
 
   const login = async () => {
     try {
-      const loginAttempt = await loginUser("test@test.test", "password");
+      const loginAttempt = await loginUser("test1@test.test", "password");
       console.log("loginAttempt =", loginAttempt);
     } catch (error) {
       console.error("error =", error);

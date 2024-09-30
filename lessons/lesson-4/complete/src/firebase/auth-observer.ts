@@ -1,16 +1,16 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
-export default function authObserver(setUserInContext: (_arg: object) => void) {
+export default function authObserver() {
   const auth = getAuth();
   // const { setUserInContext } = useUserContext();
   onAuthStateChanged(auth, async (user) => {
     if (user) {
-      setUserInContext(user);
-      console.log(user);
+      // setUserInContext(user);
+      console.log("user =", user);
     } else {
       console.log("user signed out: user =", user);
-      // @ts-ignore
-      setUserInContext(null);
+
+      // setUserInContext(null);
     }
   });
 }
