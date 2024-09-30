@@ -10,6 +10,7 @@ export default async function createUser(email: string, password: string) {
     );
     return firebaseAuthUser;
   } catch (error) {
+    console.error("error =", error);
     // throw new Error(error);
     return null;
   }
