@@ -40,3 +40,7 @@
         require('daisyui'),
       ],
     }
+
+### react-firebase-hooks[https://www.npmjs.com/package/react-firebase-hooks]
+
+    npm install react-firebase-hooks
