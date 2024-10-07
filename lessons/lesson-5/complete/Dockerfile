@@ -3,7 +3,6 @@ WORKDIR /app
 # Install dependencies
 COPY package.json package-lock.* ./
 RUN npm install
-# Build the application
 COPY . .
 RUN npm run dev
 # RUN npm run build

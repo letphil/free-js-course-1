@@ -6,10 +6,10 @@
 
 # step 1
 
-    npm install dotenv tailwindcss postcss autoprefixer daisyui@latest -D
-    npm install firebase
+    npm install dotenv -D
+    npm install firebase react-firebase-hooks
 
-# step 2
+<!-- # step 2
 
 #### setup tailwind[https://tailwindcss.com/docs/guides/vite]
 
@@ -39,7 +39,7 @@
       plugins: [
         require('daisyui'),
       ],
-    }
+    } -->
 
 ### react-firebase-hooks[https://www.npmjs.com/package/react-firebase-hooks]
 

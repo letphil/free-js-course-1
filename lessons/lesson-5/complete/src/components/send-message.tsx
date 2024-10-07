@@ -2,26 +2,26 @@ import React, { useState } from "react";
 import { auth, db } from "../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
-const SendMessage = ({ scroll }: { scroll: React.MutableRefObject<any> }) => {
+const SendMessage = ({
+  scroll,
+}: {
+  scroll: {
+    current: { scrollIntoView: (arg0: { behavior: string }) => void };
+  };
+}) => {
   const [message, setMessage] = useState("");
 
-  const sendMessage = async (event: any) => {
+  const sendMessage = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (message.trim() === "") {
       alert("Enter valid message");
       return;
     }
-    const {
-      uid,
-      displayName,
-      photoURL,
-    }:
-      | {
-          uid: string;
-          displayName: string;
-          photoURL: string;
-        }
-      | any = auth.currentUser;
+    const { uid, displayName, photoURL } = auth.currentUser as {
+      uid: string;
+      displayName: string;
+      photoURL: string;
+    };
     await addDoc(collection(db, "messages"), {
       text: message,
       name: displayName,

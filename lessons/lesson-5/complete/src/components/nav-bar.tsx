@@ -28,8 +28,6 @@ const NavBar = () => {
             onClick={googleSignIn}
             src={GoogleSignin}
             alt="sign in with google"
-            // @ts-ignore
-            type="button"
           />
         </button>
       )}
