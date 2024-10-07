@@ -2,12 +2,37 @@
 
 ```
 
+
 ```
+
+## packages
+
+### dotenv[https://www.npmjs.com/package/dotenv]
+
+### firebase[https://www.npmjs.com/package/firebase]
+
+### react-firebase-hooks[https://www.npmjs.com/package/react-firebase-hooks]
 
 # step 1
 
     npm install dotenv -D
     npm install firebase react-firebase-hooks
+
+# step 2
+
+    initialize firebase module
+
+# step 3
+
+    welcome screen ( where peopel can login )
+
+# step 4
+
+    nav bar ( where people can signout)
+
+# step 5
+
+    start building chat components -> [ chatbox, message, send-message]
 
 <!-- # step 2
 
@@ -40,7 +65,3 @@
         require('daisyui'),
       ],
     } -->
-
-### react-firebase-hooks[https://www.npmjs.com/package/react-firebase-hooks]
-
-    npm install react-firebase-hooks
