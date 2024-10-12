@@ -8,7 +8,7 @@ import {
 
 import { auth, db } from "../firebase";
 
-type MessageDoc = {
+export type MessageDoc = {
   id?: string;
   avatar?: string | null;
   createdAt: any;
