@@ -1,79 +1,70 @@
+import { useReducer } from "react";
+import "./App.css";
+
 import {
+  Controller,
   useForm,
-  FormProvider,
-  useFieldArray,
-  useFormContext,
+  Control,
+  RegisterOptions,
+  FieldValues,
 } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 
-const schema = yup.object().shape({
-  hobbies: yup.array().of(
-    yup.object().shape({
-      name: yup.string().required("Hobby is required"),
-    })
-  ),
-  address: yup.object().shape({
-    street: yup.string().required("Street is required"),
-    city: yup.string().required("City is required"),
-  }),
-});
+interface IFormInput {
+  name: string;
+  control: Control;
+  rules: Omit<
+    RegisterOptions<FieldValues, string>,
+    "valueAsNumber" | "valueAsDate" | "setValueAs" | "disabled"
+  >;
+  placeholder: string;
+}
 
-const Hobbies = () => {
-  const { control, register } = useFormContext();
-  const { fields, append, remove } = useFieldArray({
-    control,
-    name: "hobbies",
-  });
-
+const FormInput = ({ control, name, rules, placeholder }: IFormInput) => {
   return (
-    <div>
-      {fields.map((field, index) => (
-        <div key={field.id}>
-          <input {...register(`hobbies.${index}.name`)} placeholder="Hobby" />
-          <button type="button" onClick={() => remove(index)}>
-            Remove
-          </button>
+    <Controller
+      name={name}
+      control={control}
+      rules={rules}
+      render={({ field, fieldState: { error } }) => (
+        <div>
+          <input {...field} placeholder={placeholder} />
+          {error && <p>{error.message}</p>}
         </div>
-      ))}
-      <button
-        type="button"
-        onClick={() => append({ name: "playing football" })}
-      >
-        Add Hobby
-      </button>
-    </div>
+      )}
+    />
   );
 };
 
-const Address = () => {
-  const { register } = useFormContext();
-  return (
-    <div>
-      <input {...register("address.street")} placeholder="Street" />
-      <input {...register("address.city")} placeholder="City" />
-    </div>
-  );
-};
+export default function App() {
+  const { control, handleSubmit } = useForm();
 
-const App = () => {
-  const methods = useForm({
-    resolver: yupResolver(schema),
-  });
-
-  const onSubmit = (data) => {
+  const onSubmit = (data: any) => {
     console.log(data);
   };
 
   return (
-    <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)}>
-        <Hobbies />
-        <Address />
-        <button type="submit">Submit</button>
-      </form>
-    </FormProvider>
+    <div>
+      {/* make form */}
+      <FormInput
+        control={control}
+        name="name"
+        rules={{
+          required: "This is required",
+          maxLength: {
+            value: 20,
+            message: "Max length is 20",
+          },
+          minLength: {
+            value: 5,
+            message: "Min length is 5",
+          },
+          pattern: /^[A-Za-z]+$/,
+        }}
+        placeholder="Name"
+      />
+      <button type="submit" onClick={handleSubmit(onSubmit)}>
+        Submit
+      </button>
+    </div>
   );
-};
-
-export default App;
+}
