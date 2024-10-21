@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Navbar() {
+  const navigate = useNavigate();
+
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -68,7 +72,15 @@ export default function Navbar() {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <a
+          className="btn"
+          onClick={() => {
+            console.log("Button clicked");
+            navigate("/auth");
+          }}
+        >
+          Button
+        </a>
       </div>
     </div>
   );
