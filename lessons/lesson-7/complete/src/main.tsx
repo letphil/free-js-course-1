@@ -1,8 +1,9 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
-import "./index.css";
 import { initializeApp } from "firebase/app";
+import App from "./App";
+
+import "./index.css";
 
 // VITE_FIREBASE_API_KEY=AIzaSyDFsaiPdvwLgYWoJjJUuEUL5ylCyV50CCI
 // VITE_FIREBASE_AUTH_DOMAIN=fir-auth-29e0e.firebaseapp.com
