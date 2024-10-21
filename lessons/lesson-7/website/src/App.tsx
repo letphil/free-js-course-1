@@ -1,3 +1,5 @@
+import AppRouter from "./routes/app-router";
+
 export default function App() {
-  return <div>HELLO WORLD</div>;
+  return <AppRouter />;
 }
